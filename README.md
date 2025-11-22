@@ -50,6 +50,26 @@ INVOICE_SHELF_BASE_URL=https://your-invoice-shelf-domain.com/api/v1
 INVOICE_SHELF_API_TOKEN=your_api_token_here
 ```
 
+> **Important**: The `INVOICE_SHELF_API_TOKEN` in the `.env` file is primarily used for the **test script** and local development. When using this server with an MCP Client (like Claude Desktop or AnythingLLM), you should configure the API token directly in the **MCP Client's configuration file** (see [Connecting to an MCP Client](#connecting-to-an-mcp-client)). The MCP Client's configuration will take precedence.
+
+### Generating an API Token
+
+You can easily generate an API token using the provided helper script.
+
+1.  Update your `.env` file with your Invoice Shelf credentials:
+    ```env
+    INVOICE_SHELF_USERNAME=your_email@example.com
+    INVOICE_SHELF_PASSWORD=your_password
+    INVOICE_SHELF_DEVICE_NAME=mcp-server
+    ```
+
+2.  Run the script:
+    ```bash
+    sh test/api-curl.sh
+    ```
+
+3.  Copy the token from the response and update `INVOICE_SHELF_API_TOKEN` in your `.env` file.
+
 > **Note**: If you are using a self-signed certificate or a local development environment with SSL issues, you might need to set `NODE_TLS_REJECT_UNAUTHORIZED=0` in your environment, but this is **not recommended for production**.
 
 ## Usage
@@ -102,6 +122,4 @@ Add the server configuration to your MCP client (e.g., Claude Desktop, AnythingL
 
 Special thanks to the [Invoice Shelf](https://github.com/InvoiceShelf/InvoiceShelf) contributors for building an amazing open-source invoicing solution.
 
-## License
 
-ISC
