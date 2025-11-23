@@ -223,7 +223,7 @@ async function handleInvoiceTool(
             const { invoiceId } = args as { invoiceId: number };
             const result = await api.get(`/invoices/${invoiceId}`);
 
-            const invoice = result.invoice || result;
+            const invoice = result.data || result;
             const items = invoice.items?.map((item: any) =>
                 `  - ${item.name}: ${item.quantity} x ${item.price} = ${item.total}`
             ).join('\n') || 'No items';
@@ -250,7 +250,7 @@ ${items}`;
 
         case 'create_invoice': {
             const result = await api.post('/invoices', args);
-            const invoice = result.invoice || result;
+            const invoice = result.data || result;
             return {
                 content: [
                     {

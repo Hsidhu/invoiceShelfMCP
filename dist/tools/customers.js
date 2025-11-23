@@ -158,7 +158,7 @@ async function handleCustomerTool(toolName, args, api) {
         case 'get_customer': {
             const { customerId } = args;
             const result = await api.get(`/customers/${customerId}`);
-            const customer = result.customer || result;
+            const customer = result.data || result;
             const formatted = `Customer Details:
 - Name: ${customer.name}
 - Email: ${customer.email || 'N/A'}
@@ -209,7 +209,7 @@ async function handleCustomerTool(toolName, args, api) {
         }
         case 'create_customer': {
             const result = await api.post('/customers', args);
-            const customer = result.customer || result;
+            const customer = result.data || result;
             return {
                 content: [
                     {

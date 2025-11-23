@@ -26,11 +26,10 @@ curl --request POST \
 }"
 
 
-YOUR_AUTH_TOKEN="1"
-
 
 # curl --request GET \
 #   "${DOMAIN}/api/v1/users" \
-#   --header "Authorization: Bearer ${YOUR_AUTH_TOKEN}" \
+#   --header "Authorization: Bearer ${INVOICE_SHELF_API_TOKEN}" \
 #   --header "Content-Type: application/json" \
 #   --header "Accept: application/json" \
+

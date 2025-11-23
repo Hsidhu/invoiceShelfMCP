@@ -207,7 +207,7 @@ async function handleInvoiceTool(toolName, args, api) {
         case 'get_invoice': {
             const { invoiceId } = args;
             const result = await api.get(`/invoices/${invoiceId}`);
-            const invoice = result.invoice || result;
+            const invoice = result.data || result;
             const items = invoice.items?.map((item) => `  - ${item.name}: ${item.quantity} x ${item.price} = ${item.total}`).join('\n') || 'No items';
             const formatted = `Invoice #${invoice.invoice_number || invoice.id}
 Customer: ${invoice.customer?.name || 'N/A'}
@@ -229,7 +229,7 @@ ${items}`;
         }
         case 'create_invoice': {
             const result = await api.post('/invoices', args);
-            const invoice = result.invoice || result;
+            const invoice = result.data || result;
             return {
                 content: [
                     {
