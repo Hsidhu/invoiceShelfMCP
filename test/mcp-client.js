@@ -93,6 +93,16 @@ class TestClient {
         console.log('✅ Connection test result received');
         console.log(JSON.stringify(connRes.result, null, 2));
 
+        // 4. Test Dashboard
+        console.log('Testing get_dashboard_stats tool...');
+        const dashRes = await this.request('tools/call', {
+            name: 'get_dashboard_stats',
+            arguments: {}
+        }, 4);
+
+        console.log('✅ Dashboard result received');
+        console.log(JSON.stringify(dashRes.result, null, 2));
+
         this.process.kill();
         process.exit(0);
     }

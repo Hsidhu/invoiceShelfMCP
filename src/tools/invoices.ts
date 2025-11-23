@@ -1,5 +1,6 @@
 import { InvoiceShelfAPI } from '../invoice-shelf-api.js';
 import { toolRegistry } from '../tool-registry.js';
+import { formatCurrency } from '../utils/currency.js';
 
 /**
  * Invoice Tools - Handle all invoice-related operations
@@ -188,11 +189,7 @@ async function handleInvoiceTool(
     args: any,
     api: InvoiceShelfAPI
 ) {
-    // Helper function to format currency (cents to dollars)
-    const formatCurrency = (cents: number) => {
-        const dollars = cents / 100;
-        return `C$ ${dollars.toFixed(2)}`;
-    };
+
 
     switch (toolName) {
         case 'get_invoices': {

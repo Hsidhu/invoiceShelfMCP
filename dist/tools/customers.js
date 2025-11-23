@@ -1,4 +1,5 @@
 import { toolRegistry } from '../tool-registry.js';
+import { formatCurrency } from '../utils/currency.js';
 /**
  * Customer Tools - Handle all customer-related operations
  */
@@ -132,11 +133,6 @@ const customerTools = [
     },
 ];
 async function handleCustomerTool(toolName, args, api) {
-    // Helper function to format currency (cents to dollars)
-    const formatCurrency = (cents) => {
-        const dollars = cents / 100;
-        return `C$ ${dollars.toFixed(2)}`;
-    };
     switch (toolName) {
         case 'get_customers': {
             const result = await api.get('/customers', args);

@@ -110,6 +110,7 @@ Add the server configuration to your MCP client (e.g., Claude Desktop, AnythingL
 | `delete_invoice` | Delete an invoice. |
 | `send_invoice` | Email an invoice to the customer. |
 | `get_customers` | List and search customers. |
+| `get_dashboard_stats` | Get a dashboard overview including total customers, total invoices, and recent activity. |
 | `test_connection` | Verify connectivity to the Invoice Shelf API. |
 
 ## Development

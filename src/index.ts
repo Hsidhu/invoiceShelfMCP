@@ -15,6 +15,7 @@ import { toolRegistry } from './tool-registry.js';
 import './tools/users.js';
 import './tools/invoices.js';
 import './tools/customers.js'
+import './tools/dashboard.js';
 import { logger } from './utils/logger.js';
 
 
@@ -81,7 +82,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         const result = await toolRegistry.handleTool(name, args, invoiceShelf);
         logger.info('request result', { result: result });
         if (result) {
-          return result;
+            return result;
         }
 
         // Handle other tools

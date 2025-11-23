@@ -180,11 +180,6 @@ const invoiceTools = [
     },
 ];
 async function handleInvoiceTool(toolName, args, api) {
-    // Helper function to format currency (cents to dollars)
-    const formatCurrency = (cents) => {
-        const dollars = cents / 100;
-        return `C$ ${dollars.toFixed(2)}`;
-    };
     switch (toolName) {
         case 'get_invoices': {
             const result = await api.get('/invoices', args);
