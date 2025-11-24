@@ -7,6 +7,14 @@ Check out the official [Invoice Shelf Repository](https://github.com/InvoiceShel
 ## Features
 
 - **Customer Management**: List and search customers.
+- **Estimate Management**:
+    - List estimates with filtering (status, search, pagination).
+    - Get detailed estimate information.
+    - Create new estimates.
+    - Update existing estimates.
+    - Delete estimates.
+    - Send estimates via email.
+    - Convert estimates to invoices.
 - **Invoice Management**:
     - List invoices with filtering (status, search, pagination).
     - Get detailed invoice information.
@@ -109,6 +117,13 @@ Add the server configuration to your MCP client (e.g., Claude Desktop, AnythingL
 | `update_invoice` | Update an existing invoice. |
 | `delete_invoice` | Delete an invoice. |
 | `send_invoice` | Email an invoice to the customer. |
+| `get_estimates` | List estimates with pagination and filtering. |
+| `get_estimate` | Get details of a specific estimate. |
+| `create_estimate` | Create a new estimate. |
+| `update_estimate` | Update an existing estimate. |
+| `delete_estimate` | Delete an estimate. |
+| `send_estimate` | Email an estimate to the customer. |
+| `convert_estimate_to_invoice` | Convert an estimate into an invoice. |
 | `get_customers` | List and search customers. |
 | `get_dashboard_stats` | Get a dashboard overview including total customers, total invoices, and recent activity. |
 | `test_connection` | Verify connectivity to the Invoice Shelf API. |
